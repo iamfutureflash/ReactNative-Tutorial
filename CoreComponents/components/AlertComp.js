@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function AlertComp() {
     return (
-        <View>
+        <View >
             <Text>AlertComp</Text>
             <Button title='Alert' onPress={() => { Alert.alert('Invalid data!') }} />
             <Button title='Alert' onPress={() => { Alert.alert('Invalid data!', 'DOB incorrect') }} />
@@ -14,7 +14,15 @@ export default function AlertComp() {
                     [
                         {
                             text: 'Cancel',
-                            onPress: () => { console.log('cancel'); }
+                            onPress: () => { console.log('cancel'); },
+                        },
+                        {
+                            text: 'apply',
+                            onPress: () => { console.log('ok'); }
+                        },
+                        {
+                            text: 'next',
+                            onPress: () => { console.log('ok'); }
                         },
                         {
                             text: 'ok',

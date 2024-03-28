@@ -1,9 +1,16 @@
-import { Text, View, Image, ImageBackground, ScrollView, Button, Pressable, } from "react-native"
+import { useState } from "react"
+import { Text, View, Image, ImageBackground, ScrollView, Button, Pressable, Modal, StatusBar, } from "react-native"
 const logoImage = require("./assets/adaptive-icon.png")
 const App = () => {
+  const [isModelVisible, setIsModelVisible] = useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: "plum", padding: 30, }}>
       <ScrollView>
+        <StatusBar 
+          backgroundColor='black'
+          barStyle="light-content"
+          hidden
+        />
         <Pressable
           onPress={() => { console.log("Text on pressed") }}
           onPressIn={() => { console.log("Text on PressIn") }}
@@ -47,10 +54,47 @@ const App = () => {
         </ImageBackground>
         <Button
           title="Press"
-          onPress={() => { console.log("Button Pressed") }}
+          onPress={() => {
+            console.log("Button Pressed");
+            setIsModelVisible(true);
+          }}
           color="midnightblue"
-          disabled={true}
         />
+
+
+
+
+
+        <Modal
+          visible={isModelVisible}
+          onRequestClose={() => {
+            setIsModelVisible(false);
+          }}
+          animationType="slide"
+          presentationStyle="formSheet"
+        >
+          <View style={{ flex: 1, backgroundColor: "lightblue", padding: 60 }}>
+            <Text>Modal content</Text>
+            <Button
+              title="Close"
+              color="midnightblue"
+              onPress={() => {
+                console.log("Button Pressed");
+                setIsModelVisible(false);
+              }}
+            />
+          </View>
+        </Modal>
+
+
+
+
+
+
+
+
+
+
       </ScrollView>
     </View>
   )

@@ -7,6 +7,8 @@ import ButtonCom from './ButtonCom'
 import StatusBarComp from './StatusBarComp'
 import AlertComp from './AlertComp'
 import StyledComp from './StyledComp'
+import ActivityIndicatorComp16 from './ActivityIndicatorComp16'
+import Greet from '../customComponents/Greet'
 
 export default function Tutorial() {
   return (
@@ -16,9 +18,16 @@ export default function Tutorial() {
         {/* <ImageViewLocal /> */}
         {/* <ScroolComponent /> */}
         {/* <ButtonCom /> */}
-        {/* <StatusBarComp/> */}
+        {/* <StatusBarComp /> */}
+        {/* <ActivityIndicatorComp16/> */}
         {/* <AlertComp/> */}
-        <StyledComp />
+        {/* <StyledComp /> */}
+
+        <Greet name={'Bruce Wayne'}/>
+        <Greet name={'Clark Kent'}/>
+        <Greet name={'Puneet Vaishnav'}/>
+
+
       </ScrollView>
     </View>
   )
